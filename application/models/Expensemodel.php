@@ -1,0 +1,55 @@
+<?php
+
+class Expensemodel extends CI_Model
+{
+    public function __construct()
+    {
+        $this->table = 'expense';
+    }
+
+    public function save($data,$id)
+    {   
+        $this->db->trans_begin();
+        // $where = array('expense'=> $data['expense'],'restaurant_id'=> $data['restaurant_id'],'is_deleted'=> 0);
+        // if(is_exists($where, $this->table, $id,'expense_id') > 0 ){
+        //     $result = array('msg' => 'Expense Name already Exist','status' => false);
+        //     return $result;
+        // }
+        if($id == 0) {
+            $data["created_date"] = date('Y-m-d H:i:s');
+            $this->db->insert($this->table,$data);
+            $id = $this->db->insert_id();
+
+        }else{
+            $data["modified_date"] = date('Y-m-d H:i:s');
+            $this->db->where('expense_id', $id);
+            $this->db->update($this->table, $data);
+        }
+
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = array('msg' => 'Error While Updating Expense Details','status' => false);
+        } else {
+            $this->db->trans_commit();
+            $result = array('msg' => 'Expense Details Updated successfully','status' => true);
+        }
+        return $result;
+    }
+
+    function delete($id)
+    { 
+        $this->db->trans_begin();
+        $data = array('is_deleted ' => 1);
+        $this->db->where('expense_id', $id);
+        $this->db->update($this->table, $data);
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = array('msg' => 'Error While Deleting Expense','status' => false);
+        } else {
+            $this->db->trans_commit();
+            $result = array('msg' => 'Expense Deleted Successfully','status' => true);
+        }
+        return $result;
+    }
+
+}
