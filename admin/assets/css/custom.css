@@ -1,0 +1,96 @@
+.swal2-title{font-size: 16px!important;}
+.swal2-html-container{font-size: 14px!important;}
+.swal2-popup{width: 30%!important;}
+.view-data {
+    background-color: #ececec;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #cecece;
+}
+.red-small{    
+    color: red;
+    font-size: small;
+}
+.dt-buttons{float: left;}
+table.dataTable td, table.dataTable th {
+    vertical-align: middle;
+}
+
+/*CHANGES BY PRAVALIKA*/
+@media screen and (max-width: 500px) {
+.bell_container {
+    position: inherit!important;
+    transform: inherit!important; 
+    text-align: -webkit-right;
+}
+}
+@media screen and (max-width: 600px) {
+.accordion>.card>.card-header {
+    text-align-last: center;
+}
+.generate_day_end{
+    text-align-last: center;
+}
+#generate_day_end{
+    margin-top:20px;
+}
+}
+@media screen and (max-width: 390px) {
+.cashINOUT_BOX {
+    position: static!important;
+    margin-left: 10px;
+}
+table.dataTable td, table.dataTable th {
+    font-size: 5px;
+}
+table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled) {
+    padding-right: 0px!important;
+}
+.table th, .table td {
+    padding: 1px;
+}
+.item-details-report table.dataTable td, table.dataTable th {
+    font-size: 3px;
+}
+.item-details-report table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled) {
+    padding-right: 0px!important;
+}
+.item-details-report .table th, .table td {
+    padding: 0px;
+}
+.badge {
+    height: 10px;
+    font-size: 6px;
+    width: 80%;
+}
+}
+@media screen and (min-width: 390px) and (max-width: 1280px) {
+.cashINOUT_BOX {
+    position: static!important;
+    margin-left: 10px;
+}
+table.dataTable td, table.dataTable th {
+    font-size: 6px;
+}
+table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled) {
+    padding-right: 0px!important;
+}
+.table th, .table td {
+    padding: 2px;
+}
+.item-details-report table.dataTable td, table.dataTable th {
+    font-size: 4px;
+}
+.item-details-report table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled) {
+    padding-right: 0px!important;
+}
+.item-details-report .table th, .table td {
+    padding: 1px;
+}
+.badge {
+    height: 10px;
+    font-size: 6px;
+    width: 80%;
+}
+}
+/*END BY PRAVALIKA*/
